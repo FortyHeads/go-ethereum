@@ -252,6 +252,7 @@ func (st *StateTransition) TransitionDb() (ret []byte, requiredGas, usedGas *big
 			return nil, nil, nil, false, vmerr
 		}
 	}
+	return ret, Big0, Big0, err
 	requiredGas = new(big.Int).Set(st.gasUsed())
 
 	st.refundGas()
